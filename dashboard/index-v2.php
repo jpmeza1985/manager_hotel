@@ -64,11 +64,24 @@ require_once "vistas/parte_superior-v2.php";
                                             <div class="media">
                                                 <div class="avatar bg-light-success mr-2">
                                                     <div class="avatar-content">
-                                                        <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                        <i class="fas fa-money-bill avatar-icon"></i>
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">$ 1.673.750</h4>
+                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <?php
+                                                      $ventadia =
+                                                      "SELECT SUM(NETSALESTOTAL)
+                                                      FROM LOCATION_ACTIVITY_DB.OPERATIONS_DAILY_TOTAL
+                                                      WHERE LOCATIONID= $location AND BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') ";
+                                                      $stid = oci_parse($conexion, $ventadia);
+                                                      oci_execute ($stid);
+                                                        while (oci_fetch($stid)) {
+                                                          echo "$ ";
+                                                          echo oci_result ($stid,('SUM(NETSALESTOTAL)'));
+                                                        }
+                                                    ?>
+                                                    </h4>
                                                     <p class="card-text font-small-3 mb-0">Venta Neta</p>
                                                 </div>
                                             </div>
@@ -77,7 +90,7 @@ require_once "vistas/parte_superior-v2.php";
                                             <div class="media">
                                                 <div class="avatar bg-light-danger mr-2">
                                                     <div class="avatar-content">
-                                                        <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                        <i class="fas fa-money-bill avatar-icon"></i>
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
@@ -90,7 +103,7 @@ require_once "vistas/parte_superior-v2.php";
                                             <div class="media">
                                                 <div class="avatar bg-light-success mr-2">
                                                     <div class="avatar-content">
-                                                        <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                        <i class="fas fa-money-bill avatar-icon"></i>
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
@@ -120,7 +133,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-primary p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="credit-card" class="font-medium-5"></i>
+                                          <i class="fas fa-credit-card font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 467.170</h2>
@@ -133,7 +146,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-success p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="dollar-sign" class="font-medium-5"></i>
+                                          <i class="fas fa-money-bill font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 250.990</h2>
@@ -146,7 +159,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-primary p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="user-check" class="font-medium-5"></i>
+                                          <i class="fas fa-money-bill font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 283.000</h2>
@@ -159,7 +172,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-warning p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="credit-card" class="font-medium-5"></i>
+                                          <i class="fab fa-cc-visa font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 320.232</h2>
@@ -172,7 +185,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-danger p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="credit-card" class="font-medium-5"></i>
+                                          <i class="fab fa-cc-mastercard font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 152.320</h2>
@@ -185,7 +198,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-body">
                                     <div class="avatar bg-light-success p-50 mb-1">
                                         <div class="avatar-content">
-                                            <i data-feather="credit-card" class="font-medium-5"></i>
+                                          <i class="fab fa-cc-amex font-medium-5"></i>
                                         </div>
                                     </div>
                                     <h2 class="font-weight-bolder">$ 0</h2>
@@ -216,7 +229,7 @@ require_once "vistas/parte_superior-v2.php";
                                             </div>
                                             <div class="avatar bg-light-success p-50 m-0">
                                                 <div class="avatar-content">
-                                                    <i data-feather="dollar-sign" class="font-medium-5"></i>
+                                                    <i class="fas fa-funnel-dollar font-medium-5"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,7 +244,7 @@ require_once "vistas/parte_superior-v2.php";
                                             </div>
                                             <div class="avatar bg-light-success p-50 m-0">
                                                 <div class="avatar-content">
-                                                    <i data-feather="dollar-sign" class="font-medium-5"></i>
+                                                    <i class="fas fa-funnel-dollar font-medium-5"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,7 +259,7 @@ require_once "vistas/parte_superior-v2.php";
                                             </div>
                                             <div class="avatar bg-light-warning p-50 m-0">
                                                 <div class="avatar-content">
-                                                    <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                                    <i class="fas fa-door-open font-medium-5"></i>
                                                 </div>
                                             </div>
                                         </div>
