@@ -420,19 +420,31 @@ require_once "vistas/parte_superior-v2.php";
                                             </div>
                                             <div class="card-body">
                                                 <table class="datatables-basic table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th>id</th>
-                                                            <th>Nombre</th>
-                                                            <th>Correo</th>
-                                                            <th>Fecha</th>
-                                                            <th>Salario</th>
-                                                            <th>Estado</th>
-                                                            <th>Acciones</th>
-                                                        </tr>
-                                                    </thead>
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Nombre</th>
+                                                      <th>Apellido</th>
+                                                      <th>Venta</th>
+                                                      <th>RVC</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                  <?php
+                                                    $ventadia = "SELECT  EMP.FIRSTNAME , EMP.LASTNAME , SUM(DT.NETSALESTOTAL), RVC.NAMEMASTER FROM LOCATION_ACTIVITY_DB.EMPLOYEE_DAILY_TOTAL DT INNER JOIN LOCATION_ACTIVITY_DB.EMPLOYEE EMP ON DT.EMPLOYEEID = EMP.EMPLOYEEID JOIN LOCATION_ACTIVITY_DB.REVENUE_CENTER RVC ON RVC.REVENUECENTERID = DT.REVENUECENTERID
+                                                    WHERE DT.LOCATIONID= $location AND BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy')
+                                                    GROUP BY  EMP.FIRSTNAME , EMP.LASTNAME, DT.NETSALESTOTAL, RVC.NAMEMASTER";
+                                                    $stid = oci_parse($conexion, $ventadia);
+                                                    oci_execute ($stid);
+                                                    while (oci_fetch($stid)) {
+                                                    echo '<tr>
+                                                    <td>'.oci_result($stid, 'FIRSTNAME').'</td>
+                                                    <td>'.oci_result($stid, 'LASTNAME').'</td>
+                                                    <td>'.oci_result($stid, 'SUM(DT.NETSALESTOTAL)').'</td>
+                                                    <td>'.oci_result($stid,'NAMEMASTER').'</td>
+                                                      </tr>';
+                                                    }
+                                                    ?>
+                                                  </tbody>
                                                 </table>
                                             </div>
                                         </div>
