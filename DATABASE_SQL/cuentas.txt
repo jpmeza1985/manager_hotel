@@ -1,0 +1,43 @@
+-- Estructura de tabla para la tabla `cuentas`
+--
+
+CREATE TABLE `cuentas` (
+  `id` int(11) NOT NULL,
+  `trx` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `descrip` varchar(50) COLLATE utf8_spanish_ci NOT NULL, 
+`cod` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `cc` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `personas`
+--
+
+INSERT INTO `Cuentas` (`id`, `trx`, `descrip`, `cod`,`cc` ) VALUES
+(1, '1000', 'Room BAR', '4-01-01-001','001-01' );
+
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `personas`
+--
+ALTER TABLE `cuentas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `cuentas`
+--
+ALTER TABLE `cuentas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

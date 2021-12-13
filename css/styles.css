@@ -1,0 +1,125 @@
+.card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(33, 40, 50, 0.125);
+    border-radius: 0.35rem;
+}
+
+
+.card:not([class*="bg-"]) .card-header {
+    color: #0061f2;
+}
+.card .card-header {
+    font-weight: 600;
+}
+.card-header:first-child {
+    border-radius: 0.35rem 0.35rem 0 0;
+}
+.card-header {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 40, 50, 0.03);
+    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+.datatable table.dataTable thead, .datatable table.dataTable tfoot {
+    color: #0061f2;
+}
+
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+	color: #0061f2;
+}
+
+.btn .feather {
+    margin-top: -1px !important;
+    height: 0.875rem !important;
+    width: 0.875rem !important;
+}
+.btn-icon .feather {
+    margin-top: 0 !important;
+}
+.feather {
+    margin-top: -1px !important;
+    height: 0.875rem !important;
+    width: 0.875rem !important;
+}
+.datatable .btn-datatable {
+    height: 20px !important;
+    width: 20px !important;
+    font-size: 0.75rem;
+    border-radius: 0.35rem !important;
+}
+.btn-transparent-dark {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    color: rgba(33, 40, 50, 0.5) !important;
+	line-height: 1;
+}
+.btn-icon {
+    padding: 0;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 100%;
+    flex-shrink: 0;
+}
+
+.mr-2, .mx-2 {
+    margin-right: 0.5rem !important;
+}
+.fade:not(.show) {
+    opacity: 1 !important;
+}
+
+.table th, .table td {
+    padding: 0.65rem;
+    vertical-align: top;
+    border-top: 1px solid #e0e5ec;
+}
+/*Select*/
+.selecto {
+	background:#dde2f1;
+	margin: 0px;
+	width: 130px;
+	font-size: 12px;
+	border: 1px solid #CCC;
+	height: 20px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background: none\9;
+        padding: 5px\9;
+	}
+}
+.dataTables_length{ float:left}
+.dataTables_info{ float:left}
+.btn-group{float: right;margin-left: 5px;}
+@media (max-width:641px)  { 
+	.dataTables_length{ float: none}
+	.dataTables_info{ float: none}
+	
+	.btn-group {
+		float: none;
+		margin-bottom:5px;
+		width:100%;
+	}
+}
