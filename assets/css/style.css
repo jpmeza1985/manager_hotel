@@ -1,0 +1,72 @@
+/* #0274be */
+a {
+	color: #0274be;
+}
+a:hover {
+	color: #014d80;
+}
+
+.btn-primary {
+	background: linear-gradient(118deg, #0274be, rgb(16 0 181 / 70%));
+}
+.btn-primary:hover:not(.disabled):not(:disabled) {
+	box-shadow: 0px 4px 15px -8px #7367f0;
+}
+
+.auth-wrapper .brand-logo {
+	flex-direction: column;
+	align-items: center;
+}
+.main-menu .navbar-header .navbar-brand .brand-logo img {
+	max-width: 56px !important;
+}
+.brand-text {
+	color: #1969c1 !important;
+}
+/* .navbar-header { */
+	/* background-color: #c5c5c5; */
+	/* background-color: #012b56; */
+	/* background: rgb(0,2,52); */
+	/* background: -moz-linear-gradient(180deg, rgba(0,2,52,1) 0%, rgba(45,100,253,1) 85%);
+	background: -webkit-linear-gradient(180deg, rgba(0,2,52,1) 0%, rgba(45,100,253,1) 85%);
+	background: linear-gradient(180deg, rgba(0,2,52,1) 0%, rgba(45,100,253,1) 85%); */
+/* } */
+
+.page-item.active .page-link {
+	background-color: #014d80;
+}
+/* Page item - Dark mode */
+.dark-layout .pagination:not([class*='pagination-']) .page-item.active .page-link{
+	background-color: #014d80;
+}
+
+.main-menu.menu-light .navigation > li ul .active {
+	background: linear-gradient(118deg, #0274be, rgb(16 0 181 / 70%));
+	box-shadow: 0 0 10px 1px rgb(139 139 139 / 70%);
+}
+/* Dark Mode for btn */
+.main-menu.menu-dark .navigation > li ul .active {
+	background: linear-gradient(118deg, #0274be, rgb(16 0 181 / 70%));
+	box-shadow: 0 0 10px 1px rgb(139 139 139 / 70%);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+	background-color: #f0f9ff;
+	color: #1969c1;
+}
+
+.fas {
+	font-size: 19px !important;
+}
+
+.card-statistics .statistics-body .avatar .avatar-content .avatar-icon {
+	height: 20px !important;
+}
+
+table.dataTable>thead .sorting:after,
+table.dataTable>thead .sorting_asc:after,
+table.dataTable>thead .sorting_desc:after,
+table.dataTable>thead .sorting_asc_disabled:after,
+table.dataTable>thead .sorting_desc_disabled:after {
+	content:  "↓" !important;
+}
