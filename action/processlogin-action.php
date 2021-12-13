@@ -1,7 +1,7 @@
 <?php
 include '../bd/database.php';
 include 'Session.php';
-
+// exit();
 $user = $_POST['email'];
 $pass = $_POST['pass'];
 $base = new Database();
@@ -41,9 +41,9 @@ if ($found == true) {
 
     print "Cargando Usuario ... $user ";
 
-    print "<script>window.location='../dashboard/index.php';</script>";
+    print "<script>window.location='../dashboard/index-v2.php';</script>";
 } else {
     print "<script>window.alert('Error de Credenciales');</script>";
-    print "<script>window.location='../login.php';</script>";
+    print "<script>window.location='../login-v2.php';</script>";
 }
 ?>
