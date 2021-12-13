@@ -94,7 +94,20 @@ require_once "vistas/parte_superior-v2.php";
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">$ -40.450</h4>
+                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <?php
+                                                      $descuentos =
+                                                      "SELECT SUM(DDT.DISCOUNTTOTAL)
+                                                      FROM LOCATION_ACTIVITY_DB.DISCOUNT_DAILY_TOTAL DDT
+                                                      WHERE DDT.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND DDT.LOCATIONID= $location";
+                                                      $stid = oci_parse($conexion, $descuentos);
+                                                      oci_execute ($stid);
+                                                        while (oci_fetch($stid)) {
+                                                          echo "$ ";
+                                                          echo oci_result ($stid,('SUM(DDT.DISCOUNTTOTAL)'));
+                                                        }
+                                                    ?>
+                                                    </h4>
                                                     <p class="card-text font-small-3 mb-0">Descuentos</p>
                                                 </div>
                                             </div>
@@ -107,7 +120,20 @@ require_once "vistas/parte_superior-v2.php";
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">$ 120.640</h4>
+                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <?php
+                                                      $propinas =
+                                                      "SELECT SUM(SCDT.SERVICECHARGETOTAL)
+                                                      FROM LOCATION_ACTIVITY_DB.SERVICE_CHARGE_DAILY_TOTAL SCDT
+                                                      WHERE SCDT.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND SCDT.LOCATIONID= $location";
+                                                      $stid = oci_parse($conexion, $propinas);
+                                                      oci_execute ($stid);
+                                                        while (oci_fetch($stid)) {
+                                                          echo "$ ";
+                                                          echo oci_result ($stid,('SUM(SCDT.SERVICECHARGETOTAL)'));
+                                                        }
+                                                      ?>
+                                                    </h4>
                                                     <p class="card-text font-small-3 mb-0">Propinas</p>
                                                 </div>
                                             </div>
@@ -136,7 +162,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fas fa-credit-card font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 467.170</h2>
+                                    <h2 class="font-weight-bolder">
+                                    <?php
+                                      $debito =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_debito";
+                                      $stid = oci_parse($conexion, $debito);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">Débito</p>
                                 </div>
                             </div>
@@ -149,7 +188,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fas fa-money-bill font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 250.990</h2>
+                                    <h2 class="font-weight-bolder">
+                                      <?php 
+                                        $efectivo =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_cash";
+                                      $stid = oci_parse($conexion, $efectivo);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">Efectivo</p>
                                 </div>
                             </div>
@@ -162,7 +214,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fas fa-money-bill font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 283.000</h2>
+                                    <h2 class="font-weight-bolder">
+                                    <?php
+                                      $carghab =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_room ";
+                                      $stid = oci_parse($conexion, $carghab);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">Cargo Hab.</p>
                                 </div>
                             </div>
@@ -175,7 +240,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fab fa-cc-visa font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 320.232</h2>
+                                    <h2 class="font-weight-bolder">
+                                    <?php
+                                      $visa =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_visa";
+                                      $stid = oci_parse($conexion, $visa);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">Visa</p>
                                 </div>
                             </div>
@@ -188,7 +266,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fab fa-cc-mastercard font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 152.320</h2>
+                                    <h2 class="font-weight-bolder">
+                                    <?php
+                                      $visa =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_master";
+                                      $stid = oci_parse($conexion, $visa);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">MasterCard</p>
                                 </div>
                             </div>
@@ -201,7 +292,20 @@ require_once "vistas/parte_superior-v2.php";
                                           <i class="fab fa-cc-amex font-medium-5"></i>
                                         </div>
                                     </div>
-                                    <h2 class="font-weight-bolder">$ 0</h2>
+                                    <h2 class="font-weight-bolder">
+                                    <?php
+                                      $amex =
+                                        "SELECT SUM(TMD.TENDERMEDIATOTAL)
+                                        FROM LOCATION_ACTIVITY_DB.TENDER_MEDIA_DAILY_TOTAL TMD
+                                        WHERE TMD.LOCATIONID= $location AND TMD.BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') AND TMD.TENDERMEDIAID= $loc_amex";
+                                      $stid = oci_parse($conexion, $amex);
+                                      oci_execute ($stid);
+                                        while (oci_fetch($stid)) {
+                                          echo "$ ";
+                                          echo oci_result ($stid,('SUM(TMD.TENDERMEDIATOTAL)'));
+                                        }
+                                      ?>
+                                    </h2>
                                     <p class="card-text">Amex</p>
                                 </div>
                             </div>
@@ -224,7 +328,20 @@ require_once "vistas/parte_superior-v2.php";
                                     <div class="card">
                                         <div class="card-header">
                                             <div>
-                                                <h2 class="font-weight-bolder mb-0">$ 4.564.321</h2>
+                                                <h2 class="font-weight-bolder mb-0">
+                                                  <?php 
+                                                  $ventadia =
+                                                  "SELECT SUM(NETSALESTOTAL)
+                                                  FROM LOCATION_ACTIVITY_DB.OPERATIONS_DAILY_TOTAL
+                                                  WHERE LOCATIONID= $location AND BUSINESSDATE = TO_DATE('$dia', 'dd-mm-yy') - 1";
+                                                  $stid = oci_parse($conexion, $ventadia);
+                                                  oci_execute ($stid);
+                                                    while (oci_fetch($stid)) {
+                                                      echo "$ ";
+                                                      echo oci_result ($stid,('SUM(NETSALESTOTAL)'));
+                                                    }
+                                                  ?>
+                                                </h2>
                                                 <p class="card-text">Venta Ayer</p>
                                             </div>
                                             <div class="avatar bg-light-success p-50 m-0">
@@ -239,7 +356,20 @@ require_once "vistas/parte_superior-v2.php";
                                     <div class="card">
                                         <div class="card-header">
                                             <div>
-                                                <h2 class="font-weight-bolder mb-0">$ 31.449.476</h2>
+                                                <h2 class="font-weight-bolder mb-0">
+                                                  <?php 
+                                                    $ventadia =
+                                                    "SELECT SUM(NETSALESTOTAL)
+                                                    FROM LOCATION_ACTIVITY_DB.OPERATIONS_DAILY_TOTAL
+                                                    WHERE LOCATIONID= $location AND BUSINESSDATE BETWEEN TO_DATE('$dia', 'dd-mm-yy') - 7 AND TO_DATE('$dia', 'dd-mm-yy') -1 ";
+                                                    $stid = oci_parse($conexion, $ventadia);
+                                                    oci_execute ($stid);
+                                                      while (oci_fetch($stid)) {
+                                                        echo "$ ";
+                                                        echo oci_result ($stid,('SUM(NETSALESTOTAL)'));
+                                                      }
+                                                    ?>
+                                                </h2>
                                                 <p class="card-text">Últimos 7 Días</p>
                                             </div>
                                             <div class="avatar bg-light-success p-50 m-0">
@@ -254,7 +384,18 @@ require_once "vistas/parte_superior-v2.php";
                                     <div class="card">
                                         <div class="card-header">
                                             <div>
-                                                <h2 class="font-weight-bolder mb-0">2</h2>
+                                                <h2 class="font-weight-bolder mb-0">
+                                                <?php
+                                                  $openchks =
+                                                    "SELECT COUNT(*) FROM LOCATION_ACTIVITY_DB.GUEST_CHECK GC
+                                                    WHERE GC.OPENBUSINESSDATE= TO_DATE('$dia', 'dd-mm-yy') AND GC.LOCATIONID= $location AND GC.CLOSEBUSINESSDATE IS NULL";
+                                                  $stid = oci_parse($conexion, $openchks);
+                                                  oci_execute ($stid);
+                                                    while (oci_fetch($stid)) {
+                                                      echo oci_result ($stid,('COUNT(*)'));
+                                                    }
+                                                  ?>
+                                                </h2>
                                                 <p class="card-text">Mesas Abiertas</p>
                                             </div>
                                             <div class="avatar bg-light-warning p-50 m-0">
