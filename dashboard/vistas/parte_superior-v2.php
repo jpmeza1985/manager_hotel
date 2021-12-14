@@ -10,7 +10,6 @@ if(!isset($_SESSION['userid'])){
 include '../bd/database.php';
 $URL_GET = $_SERVER['REQUEST_URI'];
 $end_path_explode = end(explode('/', $URL_GET));
-var_dump($end_path_explode);
 $location = $_SESSION['userhotel'];
 
 //Definicion de variables
