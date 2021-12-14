@@ -112,12 +112,12 @@ while ($amex = mysqli_fetch_array($amex_query)) {
 
 				<!-- Nav Item - Dashboard -->
 				<li class="nav-item active">
-					<a class="nav-link" href="index.php">
+					<a class="nav-link" href="index-v2.php">
 						<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard SIMPHONY</span></a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="indexopera.php">
+					<a class="nav-link" href="indexopera-v2.php">
 						<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard OPERA</span></a>
 				</li>
