@@ -44,6 +44,6 @@ if ($found == true) {
     print "<script>window.location='../dashboard/index-v2.php';</script>";
 } else {
     print "<script>window.alert('Error de Credenciales');</script>";
-    print "<script>window.location='../login-v2.php';</script>";
+    print "<script>window.location='../login.php';</script>";
 }
 ?>

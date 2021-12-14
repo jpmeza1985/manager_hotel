@@ -128,7 +128,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                             <i class="mr-50" data-feather="user"></i> Cuenta
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../login-v2.php"><i class="mr-50" data-feather="power"></i> Cerrar Sesión</a>
+                        <a class="dropdown-item" href="../login.php"><i class="mr-50" data-feather="power"></i> Cerrar Sesión</a>
                     </div>
                 </li>
             </ul>
@@ -238,7 +238,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                     </ul>
                 </li>
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="../login-v2.php">
+                    <a class="d-flex align-items-center" href="../login.php">
                         <i data-feather="power"></i>
                         <span class="menu-title text-truncate" data-i18n="Todo">Cerrar Sesión</span>
                     </a>
