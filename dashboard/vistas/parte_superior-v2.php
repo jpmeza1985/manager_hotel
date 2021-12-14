@@ -8,6 +8,9 @@ if(!isset($_SESSION['userid'])){
 }
 //Includes
 include '../bd/database.php';
+$URL_GET = $_SERVER['REQUEST_URI'];
+$end_path_explode = end(explode('/', $URL_GET));
+var_dump($end_path_explode);
 $location = $_SESSION['userhotel'];
 
 //Definicion de variables
@@ -153,16 +156,20 @@ while ($amex = mysqli_fetch_array($amex_query)) {
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Menu</span><i data-feather="more-horizontal"></i></li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate" data-i18n="Card">Dashboards</span></a>
+                <li class=" nav-item">
+					<a class="d-flex align-items-center" href="#">
+						<i data-feather="credit-card"></i>
+						<span class="menu-title text-truncate" data-i18n="Card">Dashboards</span>
+					</a>
                     <ul class="menu-content">
-                        <li class="active">
-                            <a class="d-flex align-items-center" href="./dashboard-simphony.html">
+                        <li <?php if ($end_path_explode == 'index-v2.php') { echo 'class="active"'; } ?>>
+                            <a class="d-flex align-items-center" href="index-v2.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Simphony</span>
                             </a>
                         </li>
-                        <li>
-                            <a class="d-flex align-items-center" href="./dashboard-opera.html">
+                        <li <?php if ($end_path_explode == 'indexopera-v2.php') { echo 'class="active"'; } ?>>
+                            <a class="d-flex align-items-center" href="indexopera-v2.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Opera</span>
                             </a>
@@ -181,18 +188,58 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                 </li>
                 <li class=" nav-item">
                     <a class="d-flex align-items-center" href="#">
-                        <i data-feather="file-text"></i>
+                        <i class="file-text"></i>
                         <span class="menu-title text-truncate" data-i18n="Email">Simphony</span>
                     </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="d-flex align-items-center" href="getventaempleado.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Venta Empleado</span>
+                            </a>
+                        </li>
+						<li>
+                            <a class="d-flex align-items-center" href="getventafpxd.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Venta por Forma de Pago</span>
+                            </a>
+                        </li>
+						<li>
+                            <a class="d-flex align-items-center" href="gettopmi.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Venta Menu Items</span>
+                            </a>
+                        </li>
+						<li>
+                            <a class="d-flex align-items-center" href="getopenchks.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Detalle Checks Abiertos</span>
+                            </a>
+                        </li>
+						<li>
+                            <a class="d-flex align-items-center" href="getclosedchks.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Detalle Checks Cerrados</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class=" nav-item">
                     <a class="d-flex align-items-center" href="#">
-                        <i data-feather="file-text"></i>
-                        <span class="menu-title text-truncate" data-i18n="Chat">Opera</span>
+                        <i class="file-text"></i>
+                        <span class="menu-title text-truncate" data-i18n="Email">Opera</span>
                     </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="d-flex align-items-center" href="getmanagerflash.php">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Statistics">Manager Flash</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="./index.html">
+                    <a class="d-flex align-items-center" href="../login-v2.php">
                         <i data-feather="power"></i>
                         <span class="menu-title text-truncate" data-i18n="Todo">Cerrar Sesión</span>
                     </a>
