@@ -115,7 +115,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col mb-2 mb-sm-0">
+                                        <div class="col-xs-12 col-lg mb-2 mb-sm-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-success mr-2">
                                                     <div class="avatar-content">
@@ -224,7 +224,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col mb-2 mb-sm-0">
+                                        <div class="col-xs-12 col-lg mb-2 mb-sm-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-success mr-2">
                                                     <div class="avatar-content">

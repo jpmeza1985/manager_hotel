@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading" lang="en" data-textdirection="ltr" id="html-id">
 <!-- BEGIN: Head-->
 
 <head>
@@ -32,6 +32,14 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
+    <script>
+        miStorage = window.localStorage;
+        const current_mode = miStorage.getItem('light-layout-current-skin');
+        if (!!current_mode) {
+            let htmlTag = document.getElementById('html-id')
+            htmlTag.classList.add(current_mode);
+        }
+    </script>
 
 </head>
 <!-- END: Head-->
