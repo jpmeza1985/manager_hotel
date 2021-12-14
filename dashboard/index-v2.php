@@ -463,4 +463,4 @@ require_once "vistas/parte_superior-v2.php";
     <!-- END: Content-->
 
 <!--FIN del cont principal-->
-<?php require_once "vistas/parte_inferior.php"?>
+<?php require_once "vistas/parte_inferior-v2.php"?>
