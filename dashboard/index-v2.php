@@ -419,7 +419,7 @@ require_once "vistas/parte_superior-v2.php";
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <table class="datatables-basic table">
+                                                <table class="datatable table table-bordered table-striped">
                                                   <thead>
                                                     <tr>
                                                       <th>Nombre</th>
