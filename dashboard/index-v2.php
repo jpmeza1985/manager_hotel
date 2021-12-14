@@ -424,7 +424,7 @@ require_once "vistas/parte_superior-v2.php";
                                                     <tr>
                                                       <th>Nombre</th>
                                                       <th>Apellido</th>
-                                                      <th>Venta</th>
+                                                      <th>Venta .</th>
                                                       <th>RVC</th>
                                                     </tr>
                                                   </thead>
