@@ -102,14 +102,6 @@ while ($amex = mysqli_fetch_array($amex_query)) {
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
-    <script>
-        miStorage = window.localStorage;
-        const current_mode = miStorage.getItem('light-layout-current-skin');
-        if (!!current_mode) {
-            let htmlTag = document.getElementById('html-id')
-            htmlTag.classList.add(current_mode);
-        }
-    </script>
 
 </head>
 <!-- END: Head-->
@@ -146,7 +138,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
 
 
     <!-- BEGIN: Main Menu-->
-    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" id="menu-principal" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">

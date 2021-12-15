@@ -39,6 +39,17 @@
     <script src="assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js"></script>
     <script src="assets/js/scripts/tables/table-datatables-basic.js"></script>
     <!-- END: Page JS-->
+    <script>
+        miStorage = window.localStorage;
+        const current_mode = miStorage.getItem('light-layout-current-skin');
+        if (!!current_mode) {
+            let htmlTag = document.getElementById('html-id')
+            htmlTag.classList.add(current_mode);
+            let htmlMenu = document.getElementById('menu-principal')
+            let currentMenu = current_mode === 'dark-layout' ? 'menu-dark' : '';
+            htmlMenu.classList.add(currentMenu);
+        }
+    </script>
 
     <script>
         $(window).on('load', function() {
