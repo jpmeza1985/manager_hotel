@@ -15,7 +15,7 @@ require_once "vistas/parte_superior-v2.php";
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Simphony</a></li>
-                                    <li class="breadcrumb-item active">10-12-2021</li>
+                                    <!-- <li class="breadcrumb-item active"><?php echo $dia ?></li> -->
                                 </ol>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ require_once "vistas/parte_superior-v2.php";
                                 <div class="card-header">
                                     <h4 class="card-title">Ventas</h4>
                                     <div class="d-flex align-items-center">
-                                        <p class="card-text mr-25 mb-0">Última actualización 18:05</p>
+                                        <p class="card-text mr-25 mb-0">Última actualización <?php echo $dia ?></p>
                                     </div>
                                 </div>
                                 <div class="card-body statistics-body">
@@ -68,7 +68,7 @@ require_once "vistas/parte_superior-v2.php";
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <h2 class="font-weight-bolder mb-0">
                                                     <?php
                                                       $ventadia =
                                                       "SELECT SUM(NETSALESTOTAL)
@@ -81,7 +81,7 @@ require_once "vistas/parte_superior-v2.php";
                                                           echo oci_result ($stid,('SUM(NETSALESTOTAL)'));
                                                         }
                                                     ?>
-                                                    </h4>
+                                                    </h2>
                                                     <p class="card-text font-small-3 mb-0">Venta Neta</p>
                                                 </div>
                                             </div>
@@ -94,7 +94,7 @@ require_once "vistas/parte_superior-v2.php";
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <h2 class="font-weight-bolder mb-0">
                                                     <?php
                                                       $descuentos =
                                                       "SELECT SUM(DDT.DISCOUNTTOTAL)
@@ -107,7 +107,7 @@ require_once "vistas/parte_superior-v2.php";
                                                           echo oci_result ($stid,('SUM(DDT.DISCOUNTTOTAL)'));
                                                         }
                                                     ?>
-                                                    </h4>
+                                                    </h2>
                                                     <p class="card-text font-small-3 mb-0">Descuentos</p>
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@ require_once "vistas/parte_superior-v2.php";
                                                     </div>
                                                 </div>
                                                 <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">
+                                                    <h2 class="font-weight-bolder mb-0">
                                                     <?php
                                                       $propinas =
                                                       "SELECT SUM(SCDT.SERVICECHARGETOTAL)
@@ -133,7 +133,7 @@ require_once "vistas/parte_superior-v2.php";
                                                           echo oci_result ($stid,('SUM(SCDT.SERVICECHARGETOTAL)'));
                                                         }
                                                       ?>
-                                                    </h4>
+                                                    </h2>
                                                     <p class="card-text font-small-3 mb-0">Propinas</p>
                                                 </div>
                                             </div>
