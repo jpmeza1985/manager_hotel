@@ -197,7 +197,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                         <span class="menu-title text-truncate" data-i18n="Email">Simphony</span>
                     </a>
                     <ul class="menu-content">
-                        <li>
+                        <li <?php if ($end_path_explode == 'getventaempleado.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="getventaempleado.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Venta Empleado</span>
