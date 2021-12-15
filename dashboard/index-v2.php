@@ -82,7 +82,7 @@ require_once "vistas/parte_superior-v2.php";
                                                         }
                                                     ?>
                                                     </h2>
-                                                    <p class="card-text font-small-3 mb-0">Venta Neta</p>
+                                                    <p class="card-text mb-0">Venta Neta</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@ require_once "vistas/parte_superior-v2.php";
                                                         }
                                                     ?>
                                                     </h2>
-                                                    <p class="card-text font-small-3 mb-0">Descuentos</p>
+                                                    <p class="card-text mb-0">Descuentos</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@ require_once "vistas/parte_superior-v2.php";
                                                         }
                                                       ?>
                                                     </h2>
-                                                    <p class="card-text font-small-3 mb-0">Propinas</p>
+                                                    <p class="card-text mb-0">Propinas</p>
                                                 </div>
                                             </div>
                                         </div>
