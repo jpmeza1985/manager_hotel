@@ -100,7 +100,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=<?php echo time(); ?>">
     <!-- END: Custom CSS-->
 
 </head>

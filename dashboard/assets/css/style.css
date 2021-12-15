@@ -70,3 +70,7 @@ table.dataTable>thead .sorting_asc_disabled:after,
 table.dataTable>thead .sorting_desc_disabled:after {
 	content:  "↓" !important;
 }
+
+.form-inline-space-around {
+	justify-content: space-evenly;
+}
