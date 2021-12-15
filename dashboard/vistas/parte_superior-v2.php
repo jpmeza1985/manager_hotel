@@ -97,6 +97,12 @@ while ($amex = mysqli_fetch_array($amex_query)) {
     <link rel="stylesheet" type="text/css" href="assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css">
+
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="vendor/datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->
+    <link rel="stylesheet"  type="text/css" href="vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->

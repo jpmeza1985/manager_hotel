@@ -828,6 +828,7 @@ body.dark-layout {
 .dark-layout .dataTables_wrapper .dt-buttons .buttons-excel,
 .dark-layout .dataTables_wrapper .dt-buttons .buttons-pdf,
 .dark-layout .dataTables_wrapper .dt-buttons .buttons-print,
+.dark-layout .dataTables_wrapper .dt-buttons .buttons-csv,
 .dark-layout .dataTables_wrapper .dt-buttons .btn-secondary,
 .dark-layout .dataTables_wrapper .dt-buttons .dt-button-collection [class*='buttons-'] {
   background-color: #161d31 !important; }

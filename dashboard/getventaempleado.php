@@ -38,7 +38,7 @@
                 <input type="date" class="form-control" name="fh" id="fh" value= <?php echo $hoy; ?> required>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-sm" value="Generar reporte">
+                <input type="submit" class="btn btn-primary btn-sm" value="Generar Reporte">
               </div>
             </form>
           </div>
