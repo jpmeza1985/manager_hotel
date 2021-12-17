@@ -30,7 +30,7 @@
 
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form action="getventafpxd.php" method="POST" class="form-inline form-inline-space-around">
+            <form action="getopenchks.php" method="POST" class="form-inline form-inline-space-around">
               <div class="form-group">
                 <input type="date" class="form-control" name="fd" id="fd" value= <?php echo $hoy; ?> required>
               </div>
