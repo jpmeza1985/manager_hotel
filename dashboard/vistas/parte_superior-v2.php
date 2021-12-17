@@ -134,7 +134,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                             <i class="mr-50" data-feather="user"></i> Cuenta
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../login.php"><i class="mr-50" data-feather="power"></i> Cerrar Sesión</a>
+                        <a class="dropdown-item" href="../bd/logout.php"><i class="mr-50" data-feather="power"></i> Cerrar Sesión</a>
                     </div>
                 </li>
             </ul>
@@ -181,14 +181,6 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                         </li>
                     </ul>
                 </li>
-                <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Reportes</span><i data-feather="more-horizontal"></i>
                 </li>
                 <li class=" nav-item">
@@ -203,25 +195,25 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Venta Empleado</span>
                             </a>
                         </li>
-						<li>
+                        <li <?php if ($end_path_explode == 'getventafpxd.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="getventafpxd.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Venta por Forma de Pago</span>
                             </a>
                         </li>
-						<li>
+                        <li <?php if ($end_path_explode == 'gettopmi.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="gettopmi.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Venta Menu Items</span>
                             </a>
                         </li>
-						<li>
+                        <li <?php if ($end_path_explode == 'getopenchks.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="getopenchks.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Detalle Checks Abiertos</span>
                             </a>
                         </li>
-						<li>
+                        <li <?php if ($end_path_explode == 'getclosedchks.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="getclosedchks.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Detalle Checks Cerrados</span>
@@ -235,7 +227,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                         <span class="menu-title text-truncate" data-i18n="Email">Opera</span>
                     </a>
                     <ul class="menu-content">
-                        <li>
+                        <li <?php if ($end_path_explode == 'getmanagerflash.php') { echo 'class="active"'; } ?>>
                             <a class="d-flex align-items-center" href="getmanagerflash.php">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate" data-i18n="Statistics">Manager Flash</span>
@@ -244,7 +236,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                     </ul>
                 </li>
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="../login.php">
+                    <a class="d-flex align-items-center" href="../bd/logout.php">
                         <i data-feather="power"></i>
                         <span class="menu-title text-truncate" data-i18n="Todo">Cerrar Sesión</span>
                     </a>
