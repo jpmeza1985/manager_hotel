@@ -41,7 +41,11 @@ if ($found == true) {
 
     print "Cargando Usuario ... $user ";
 
-    print "<script>window.location='../dashboard/index-v2.php';</script>";
+    if ($admin == 1) {
+        print "<script>window.location='../dashboard/usuarios.php';</script>";
+    } else {
+        print "<script>window.location='../dashboard/index-v2.php';</script>";
+    }
 } else {
     print "<script>window.alert('Error de Credenciales');</script>";
     print "<script>window.location='../login.php';</script>";

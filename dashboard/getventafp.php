@@ -1,4 +1,7 @@
-<?php require_once "vistas/parte_superior.php"?>
+<?php
+  require_once "vistas/parte_superior-v2.php";
+  require_once "middleware/router-check.php";
+?>
     <h3 class="text-center"Reporte por Formas de Pago</h3>
 <br>
     <div class="container">

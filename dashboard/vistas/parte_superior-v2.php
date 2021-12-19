@@ -17,7 +17,9 @@ $fecha = new DateTime("now", new DateTimeZone('America/Santiago'));
 $dia = $fecha->format('d-m-Y');
 $hora = $fecha->format('H:i');
 $hoy = $fecha->format('Y-m-d');
-$mysqli = new mysqli('localhost', 'c2050276_gestion', 'goREwise06', 'c2050276_gestion');
+$database =  new Database();
+$mysqli = $database->connect();
+// $mysqli = new mysqli('localhost', 'c2050276_gestion', 'goREwise06', 'c2050276_gestion');
 //debito
 $deb_query = $mysqli -> query ("SELECT id_tender FROM tender WHERE id_hotel= $location and nom_tender= 'Debito';");
 while ($debito = mysqli_fetch_array($deb_query)) {
@@ -68,9 +70,6 @@ while ($amex = mysqli_fetch_array($amex_query)) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
     <title>ITH Sistemas</title>
     <link href="assets/font/font-style.css" rel="stylesheet">
 
@@ -161,6 +160,7 @@ while ($amex = mysqli_fetch_array($amex_query)) {
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Menu</span><i data-feather="more-horizontal"></i></li>
+                <?php if ($_SESSION['admin'] == 0) { ?>
                 <li class=" nav-item">
 					<a class="d-flex align-items-center" href="#">
 						<i data-feather="credit-card"></i>
@@ -235,6 +235,15 @@ while ($amex = mysqli_fetch_array($amex_query)) {
                         </li>
                     </ul>
                 </li>
+                <?php } ?> 
+                <?php if ($_SESSION['admin'] == 1) { ?>
+                <li class=" <?php if ($end_path_explode == 'usuarios.php') { echo 'active '; } ?> nav-item">
+                    <a class="d-flex align-items-center" href="usuarios.php">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-title text-truncate" data-i18n="Todo">Usuarios</span>
+                    </a>
+                </li>
+                <?php } ?>
                 <li class=" nav-item">
                     <a class="d-flex align-items-center" href="../bd/logout.php">
                         <i data-feather="power"></i>

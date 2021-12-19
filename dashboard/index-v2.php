@@ -1,5 +1,6 @@
 <?php
 require_once "vistas/parte_superior-v2.php";
+require_once "middleware/router-check.php";
 ?>
 
     <!-- BEGIN: Content-->
