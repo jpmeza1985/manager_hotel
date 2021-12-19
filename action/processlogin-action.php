@@ -18,10 +18,17 @@ while ($r = $query->fetch_array()) {
     $usernombre = $r['nombre'];
     $useremail = $r['email'];
     $admin = $r['admin'];
+    $is_active = $r['activo'];
     $found = true;
 }
 
 if ($found == true) {
+
+    if ($is_active == 0) {
+        print "<script>window.location='../login.php?e=1';</script>";
+        die();
+    }
+
     session_start();
 
     $_SESSION['userid'] = $userid;
