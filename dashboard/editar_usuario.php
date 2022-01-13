@@ -41,7 +41,7 @@ $hoteles->fetch_all(MYSQLI_ASSOC);
 
         <div class="row justify-content-center">
           <div class="col-6 text-center">
-            <h4>Editar Usuario</h4>
+            <h4>Editar Usuario prueba</h4>
           </div>
         </div>
         <div class="row justify-content-center">
